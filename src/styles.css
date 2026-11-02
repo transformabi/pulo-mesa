@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #100e0c;
+  --color-cream: #f3ece2;
+  --color-paper: #faf6ef;
+  --color-line: #d9cfc0;
+  --color-muted: #6f675e;
+  --color-signal: #e07a3d;
+  --color-stamp: #9a3412;
+  --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --radius-sm: 2px;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 1rem;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .sheet {
+    box-shadow: none !important;
+  }
+}
+
+.sheet {
+  box-shadow: inset 4px 0 0 var(--color-signal);
+}
+
+.seal {
+  transform: rotate(-8deg);
+  border: 3px solid var(--color-stamp);
+  color: var(--color-stamp);
+}
